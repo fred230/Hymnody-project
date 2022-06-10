@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#7339F6</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bg">#e2eaf7</color>
+    <color name="txt">#415778</color>
+    <color name="drawer_bg">#3fc0dd</color>
+    <color name="scbg">#c7daf3</color>
+    <color name="hymn_txt">#e2eaf7</color>
+    <color name="title_txt">#3fc0dd</color>
+    <color name="hymn_bg">#494949</color>
+    <color name="actionbar">#3fc0dd</color>
+    <color name="pause">#01ca01</color>
+    <color name="drawer_color">#bee7f6</color>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bookmark_id"
+        android:icon="@drawable/bookmark_icon"
+        android:title="Bookmarks"/>
+
+   <item android:title="Promote us">
+       <menu>
+           <group android:checkableBehavior="single">
+               <item
+                   android:title="Share"
+                   android:id="@+id/share_id"
+                   android:icon="@drawable/share_icon"
+                   />
+               <item
+                   android:title="Rate"
+                   android:icon="@drawable/rate_icon"
+                   />
+           </group>
+       </menu>
+   </item>
+
+    <item android:title="Others">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="Help"
+                    android:icon="@drawable/help_ic"
+                    />
+                <item
+                    android:title="About"
+                    android:icon="@drawable/info_ic"
+                    />
+            </group>
+        </menu>
+    </item>
+
+
+
+</menu>

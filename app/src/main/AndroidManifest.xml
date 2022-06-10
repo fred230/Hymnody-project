@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fredrick.hymnal_ultimate">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ppic"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ppic_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Hymnal_Ultimate">
+        <activity
+            android:name=".BookMark"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FirstActivity" />
+        <activity android:name=".LyricsActivity" />
+
+
+    </application>
+
+</manifest>

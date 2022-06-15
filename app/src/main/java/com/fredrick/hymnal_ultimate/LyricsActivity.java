@@ -1,5 +1,7 @@
 package com.fredrick.hymnal_ultimate;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -9,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.media.MediaPlayer;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,6 +21,8 @@ public class LyricsActivity<intent> extends AppCompatActivity {
     TextView textView, title;
     Intent intent;
     private AudioManager audio;
+    private ClipboardManager clipboardManager;
+    public String copy_data;
      MediaPlayer mp;
 
 
@@ -83,6 +89,40 @@ public class LyricsActivity<intent> extends AppCompatActivity {
 
         textView= findViewById(R.id.text_id);
         title = findViewById(R.id.title_id);
+
+        textView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(LyricsActivity.this);
+                builder.setTitle("Copy Hymn");
+                builder.setPositiveButton("copy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+
+                        copy_data = textView.getText().toString();
+
+                        android.content.ClipData   clip = android.content.ClipData.newPlainText("copied", copy_data);
+                        clipboardManager.setPrimaryClip(clip);
+
+                        Toast.makeText(LyricsActivity.this, "copied", Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
+
+                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                return false;
+            }
+
+        });
 
 
         if (intent!=null){
@@ -194,23 +234,6 @@ public class LyricsActivity<intent> extends AppCompatActivity {
             default:
                 return false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
